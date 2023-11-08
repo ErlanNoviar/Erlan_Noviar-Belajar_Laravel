@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     $nama = 'Erlan Noviar';
+
+//     $mahasiswa = [
+//         [
+//             'nama' => 'Erlan Noviar',
+//             'nim' => '20110022'
+//         ]
+//     ];
+//     return view('admin/biodata', compact('nama', 'mahasiswa'));
+// });
+
+// Route::get('/biodata', function () {
+//     $nama = 'Erlan Noviar';
+
+//     $hitung = 2;
+//     $mahasiswa = [
+//         [
+//             'nama' => 'Erlan Noviar',
+//             'nim' => '20110022'
+//         ]
+//     ];
+//     return view('pages.biodata', compact('mahasiswa','hitung'));
+// });
+Route::get("/", [HomeController::class,"index"]);
